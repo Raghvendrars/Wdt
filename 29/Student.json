@@ -1,0 +1,34 @@
+[
+    {
+        "id":"1",
+        "Name":"Raghvendra Singh",
+        "Gender":"Male",
+        "RollNo":"151625",
+        "Address":"Maninagar"
+
+    },
+    {
+        "id":"2",
+        "Name":"Himanshu Mishra",
+        "Gender":"Male",
+        "RollNo":"151618",
+        "Address":"Ambawadi"
+
+    },
+    {
+        "id":"3",
+        "Name":"Ansh Verma",
+        "Gender":"Male",
+        "RollNo":"151602",
+        "Address":"Ramol"
+
+    },
+    {
+        "id":"4",
+        "Name":"Abhishek Carlekar",
+        "Gender":"Male",
+        "RollNo":"151601",
+        "Address":"Bapunagar"
+
+    }
+]
