@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 40%;
+        }
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <table id="student_tbl">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Roll No</th>
+                <th>Address</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $.getJSON("Student.json",function(data){
+                var student_data ='';
+                $.each(data, function(key,value){
+                    student_data +='<tr>';
+                    student_data +='<td>'+value.id+'</td>';
+                    student_data +='<td>'+value.Name+'</td>';
+                    student_data +='<td>'+value.Gender+'</td>';
+                    student_data +='<td>'+value.RollNo+'</td>';
+                    student_data +='<td>'+value.Address+'</td>';
+                    student_data +='<tr>';
+                });
+                $('#student_tbl').append(student_data);
+            });
+        });
+    </script>
+</body>
+</html>
