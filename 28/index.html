@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 40%;
+        }
+        td, th {
+          border: 1px solid black;
+          text-align: left;
+          padding: 8px;
+        }
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <table id="student_tbl">
+            <tr>
+                <th>Song Name</th>
+                <th>Album</th>
+                <th>Singer</th>
+                <th>Producer</th>
+                <th>Release date</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $.getJSON("album.json",function(data){
+                var album_data ='';
+                $.each(data, function(key,value){
+                    album_data +='<tr>';
+                    album_data +='<td>'+value.songName+'</td>';
+                    album_data +='<td>'+value.album+'</td>';
+                    album_data +='<td>'+value.singer+'</td>';
+                    album_data +='<td>'+value.Producer+'</td>';
+                    album_data +='<td>'+value.Release+'</td>';
+                    album_data +='<tr>';
+                });
+                $('#student_tbl').append(album_data);
+            });
+        });
+    </script>
+</body>
+
+</html>
